@@ -31,6 +31,15 @@ int main()
 
     while (getchar() != '\n');
 
+    inputFile = fopen(fileName, "r");
+    if (inputFile == NULL)
+    {
+        printf("Ошибка: Не удалось открыть файл \"%s\"\n", fileName);
+        printf("Нажмите любую клавишу для выхода...");
+        getchar();
+        return -1;
+    }
+
    
     
 }

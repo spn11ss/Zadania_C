@@ -14,5 +14,12 @@ int main()
     SetConsoleOutputCP(1251);
     setlocale(LC_ALL, "Russian");
 
+    char fileName[MAX_FILENAME_LENGTH];
+    char symbol;
+    FILE* inputFile, * tempFile;
+    char line[MAX_LINE_LENGTH];
+    int removalCount = 0;
+
+    
     
 }

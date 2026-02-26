@@ -29,6 +29,8 @@ int main()
     printf("Введите символ для удаления: ");
     scanf("%c", &symbol);
 
-    
+    while (getchar() != '\n');
+
+   
     
 }

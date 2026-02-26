@@ -53,6 +53,46 @@ int main()
         return -1;
     }
 
-    
+    while (fgets(line, MAX_LINE_LENGTH, inputFile) != NULL)
+    {
+        int len = strlen(line);
+
+        if (len > 0 && line[len - 1] == '\n')
+        {
+            line[len - 1] = '\0';
+            len--;
+        }
+
+        char newLine[MAX_LINE_LENGTH] = "";
+        int newLineIndex = 0;
+
+        for (int i = 0; i < len; i++)
+        {
+            if (line[i] == symbol)
+            {
+                removalCount++;
+            }
+            else
+            {
+                newLine[newLineIndex++] = line[i];
+            }
+        }
+        newLine[newLineIndex] = '\0';
+
+        fprintf(tempFile, "%s\n", newLine);
+
+        // Проверка на ошибки записи
+        if (ferror(tempFile))
+        {
+            printf("Ошибка: Не удалось записать во временный файл!\n");
+            fclose(inputFile);
+            fclose(tempFile);
+            printf("Нажмите любую клавишу для выхода...");
+            getchar();
+            return -1;
+        }
+    }
+
+   
     
 }

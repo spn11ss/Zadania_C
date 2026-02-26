@@ -20,6 +20,15 @@ int main()
     char line[MAX_LINE_LENGTH];
     int removalCount = 0;
 
+
+    printf("Введите имя файла: ");
+    fgets(fileName, MAX_FILENAME_LENGTH, stdin);
+
+    fileName[strcspn(fileName, "\n")] = 0;
+
+    printf("Введите символ для удаления: ");
+    scanf("%c", &symbol);
+
     
     
 }

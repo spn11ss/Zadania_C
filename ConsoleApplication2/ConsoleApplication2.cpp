@@ -81,7 +81,6 @@ int main()
 
         fprintf(tempFile, "%s\n", newLine);
 
-        // Проверка на ошибки записи
         if (ferror(tempFile))
         {
             printf("Ошибка: Не удалось записать во временный файл!\n");
@@ -92,6 +91,18 @@ int main()
             return -1;
         }
     }
+    fclose(inputFile);
+    fclose(tempFile);
+
+    if (remove(fileName) != 0)
+    {
+        printf("Ошибка: Не удалось удалить исходный файл!\n");
+        printf("Нажмите любую клавишу для выхода...");
+        getchar();
+        return -1;
+    }
+    
+    
 
    
     

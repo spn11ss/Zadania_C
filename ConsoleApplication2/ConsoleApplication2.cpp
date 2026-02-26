@@ -102,6 +102,15 @@ int main()
         return -1;
     }
     
+    if (rename(tempFileName, fileName) != 0)
+    {
+        printf("Ошибка: Не удалось переименовать временный файл!\n");
+        printf("Нажмите любую клавишу для выхода...");
+        getchar();
+        return -1;
+    }
+
+    
     
 
    

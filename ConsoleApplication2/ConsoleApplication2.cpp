@@ -109,7 +109,11 @@ int main()
         getchar();
         return -1;
     }
+    printf("Готово! Удалено символов: %d\n", removalCount);
+    printf("Нажмите любую клавишу для выхода...");
+    getchar();
 
+    return 0;
     
     
 

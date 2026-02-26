@@ -40,6 +40,19 @@ int main()
         return -1;
     }
 
-   
+    char tempFileName[MAX_FILENAME_LENGTH + 6];
+    sprintf(tempFileName, "temp_%s", fileName);
+
+    tempFile = fopen(tempFileName, "w");
+    if (tempFile == NULL)
+    {
+        printf("Ошибка: Не удалось создать временный файл!\n");
+        fclose(inputFile);
+        printf("Нажмите любую клавишу для выхода...");
+        getchar();
+        return -1;
+    }
+
+    
     
 }
